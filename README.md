@@ -105,6 +105,7 @@ System metrics:
 
 The system is designed as a **layered modular simulation framework**, separating concerns between core logic, execution modes, and analysis tools.
 
+```text
                 ┌──────────────────────┐
                 │      main.py         │
                 │  (Entry Controller)  │
@@ -129,14 +130,14 @@ The system is designed as a **layered modular simulation framework**, separating
         ▼              ▼              ▼
 ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
 │ Grid System │ │ Rule System │ │ Experiments │
-│core/grid.py │ │core/rules.py│ │experiments/ │
-└─────────────┘ └─────────────┘ │patterns.py  │
-                                │metrics.py   │
+│core/grid.py │ │core/rules.py│ │patterns.py  │
+└─────────────┘ └─────────────┘ │metrics.py   │
                                 └─────────────┘
 
 
----
 
+
+```
 ## 🧪 Example Behaviors
 
 Emergent patterns include:
@@ -192,28 +193,6 @@ The system is designed to be **observed, analyzed, and explored**, not just exec
 
 ---
 
-## 🔬 Future Roadmap
-
-### Phase 1 — Rule Expansion
-- Custom rule definitions  
-- Runtime rule switching  
-
-### Phase 2 — Analysis Tools
-- Heatmaps  
-- Pattern detection  
-- Statistical analysis  
-
-### Phase 3 — Advanced Simulation
-- Multi-rule environments  
-- Competing systems  
-- Noise injection  
-
-### Phase 4 — Visualization Upgrade
-- Web-based renderer (Canvas/WebGL)  
-- Simulation recording (GIF/MP4)  
-- Interactive dashboards  
-
----
 
 ## 🧰 Tech Stack
 
@@ -221,13 +200,6 @@ The system is designed to be **observed, analyzed, and explored**, not just exec
 - Python  
 - Tkinter  
 - Standard Library  
-
-### Planned
-- NumPy  
-- Matplotlib  
-- Web visualization layer  
-
----
 
 ## 📌 Project Status
 
@@ -255,15 +227,8 @@ Not production software — intentionally a research sandbox.
 
 ---
 
-## 📸 Screenshots
-
-(To be added)
-
-Suggested visuals:
-
-- Glider movement  
-- Oscillators  
-- Live grid interaction  
+## 📸 Project Interface View
+<img width="682" height="537" alt="image" src="https://github.com/user-attachments/assets/82e7a5fd-5029-44f6-89c7-ca8ab1cf9c33" />
 
 ---
 
