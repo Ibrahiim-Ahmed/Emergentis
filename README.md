@@ -1,271 +1,274 @@
-🧬 Emergentis
-Cellular Automata Research & Simulation Framework
-Status Python License Focus
+# 🧬 Emergentis
+## Cellular Automata Research & Simulation Framework
 
 ---
 
-📖 Overview
+## 📖 Overview
 
 Emergentis is an experimental simulation framework for exploring emergent behavior in cellular automata systems.
 
-It demonstrates how complex, self-organizing patterns arise from simple deterministic rules applied locally over time — inspired primarily by Conway’s Game of Life, but extended into a modular research environment.
+It demonstrates how complex, self-organizing patterns arise from simple deterministic rules applied locally over time — inspired by Conway’s Game of Life, but extended into a modular research environment.
 
-Instead of being a single simulation, Emergentis is designed as a lightweight research platform for experimenting with:
+Instead of being a single simulation, Emergentis functions as a **mini research sandbox** for experimenting with:
 
-- Rules
-- Patterns
-- System dynamics
-- Emergent behavior
+- Rules  
+- Patterns  
+- System behavior  
+- Emergent dynamics  
 
 ---
 
-🧠 Core Idea
-
-At its foundation, Emergentis investigates a fundamental question:
+## 🧠 Core Idea
 
 How does complexity emerge from simplicity?
 
-Each cell in the system follows simple rules:
+Each cell follows simple rules:
 
-- Lives or dies based on neighbors
-- No central controller exists
-- Evolution happens through iteration only
+- Lives or dies based on neighbors  
+- No central controller exists  
+- Evolution happens through iteration only  
 
 Despite this simplicity, the system produces:
 
-- Oscillators
-- Stable structures
-- Moving entities (gliders)
-- Chaotic systems
+- Oscillators  
+- Stable structures  
+- Moving patterns (gliders)  
+- Chaotic behavior  
 
 ---
 
-🚀 What Makes This Different
+## 🚀 What Makes This Different
 
-Most cellular automata implementations:
+Most cellular automata projects:
 
-- Show patterns
-- Stop at visualization
+- Focus on visualization  
+- End at pattern rendering  
 
 Emergentis instead:
 
-- Treats the system as a research sandbox
-- Enables experimentation with rules and patterns
-- Focuses on system behavior analysis over time
-- Is designed to evolve into a simulation research framework
+- Treats the system as a research environment  
+- Enables rule experimentation  
+- Tracks system-level behavior  
+- Supports analysis over time  
 
 ---
 
-🎮 Features
+## 🎮 Features
 
-✔ Modular Simulation Engine
+### 🧩 Simulation Engine
 
-- Clean separation of:
-  - Grid state
-  - Evolution rules
-  - Simulation logic
-- Fully extensible rule system
-- Designed for experimentation, not just execution
-
----
-
-✔ Interactive GUI (Tkinter)
-
-- Real-time grid visualization
-- Click-to-edit cells
-- Start / Pause / Reset controls
-- Adjustable simulation speed
-- Runtime pattern injection
+- Modular architecture  
+- Separation of:
+  - Grid state  
+  - Rule system  
+  - Evolution logic  
+- Fully extensible design  
 
 ---
 
-✔ CLI Simulation Mode
+### 🖥️ Interactive GUI (Tkinter)
 
-- Lightweight terminal-based runner
-- Fixed-step execution
-- Fast experimentation without GUI overhead
-
----
-
-✔ Research & Experiment Tools
-
-Built-in pattern library:
-
-- Glider (moving structure)
-- Blinker (oscillator)
-- Block (stable structure)
-- Toad (periodic oscillator)
-
-Additional tools:
-
-- Population tracking
-- Generation counter
-- System evolution monitoring
+- Real-time grid visualization  
+- Click-to-edit cells  
+- Start / Pause / Reset controls  
+- Adjustable simulation speed  
+- Runtime pattern injection  
 
 ---
 
-🧱 System Architecture
+### 🧾 CLI Mode
 
-        ┌────────────────────────────┐
-        │      main.py (entry)       │
-        └─────────────┬──────────────┘
-                      │
-        ┌─────────────▼──────────────┐
-        │     Simulation Engine      │
-        │   (core evolution loop)    │
-        └─────────────┬──────────────┘
-                      │
-        ┌─────────────▼──────────────┐
-        │        Grid System         │
-        │   (cell state storage)     │
-        └─────────────┬──────────────┘
-                      │
-        ┌─────────────▼──────────────┐
-        │      Rule System           │
-        │ (Game of Life logic)       │
-        └─────────────┬──────────────┘
-                      │
-        ┌─────────────▼──────────────┐
-        │   Output Layer (GUI/CLI)   │
-        │   visualization & logs     │
-        └────────────────────────────┘
+- Lightweight terminal simulation  
+- Fixed-step execution  
+- Fast experimental testing  
 
 ---
 
-🧪 Example Behaviors
+### 🧪 Research Tools
 
-Emergentis can generate:
+Built-in patterns:
 
-- Stable static structures (blocks)
-- Periodic oscillators (blinkers, toads)
-- Translational motion (gliders)
-- Chaotic evolving systems
+- Glider  
+- Blinker  
+- Block  
+- Toad  
 
-These emerge purely from rule iteration.
+System metrics:
 
----
-
-📊 Metrics System
-
-The simulation tracks system behavior over time:
-
-- Alive cell population
-- Generation count
-- Stability trends
-- Growth / decay patterns
-
-This enables analysis of:
-
-- Order vs chaos
-- System stability
-- Long-term evolution behavior
+- Population tracking  
+- Generation counter  
+- Evolution monitoring  
 
 ---
 
-🧠 Design Philosophy
+## 🧱 System Architecture
 
-✔ Modularity
+The system is designed as a **layered modular simulation framework**, separating concerns between core logic, execution modes, and analysis tools.
 
-Every system component is independent:
+                ┌──────────────────────┐
+                │      main.py         │
+                │  (Entry Controller)  │
+                └──────────┬───────────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                                     │
+        ▼                                     ▼
+┌──────────────────┐               ┌──────────────────┐
+│   GUI Layer      │               │    CLI Layer     │
+│  gui/app.py      │               │ cli/runner.py    │
+└────────┬─────────┘               └────────┬─────────┘
+         │                                  │
+         └──────────────┬───────────────────┘
+                        ▼
+            ┌────────────────────────┐
+            │   Simulation Engine    │
+            │   core/engine.py       │
+            └──────────┬─────────────┘
+                       │
+        ┌──────────────┼──────────────┐
+        ▼              ▼              ▼
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Grid System │ │ Rule System │ │ Experiments │
+│core/grid.py │ │core/rules.py│ │experiments/ │
+└─────────────┘ └─────────────┘ │patterns.py  │
+                                │metrics.py   │
+                                └─────────────┘
 
-- Engine
-- Grid
-- Rules
-- Interface
 
 ---
 
-✔ Extensibility
+## 🧪 Example Behaviors
+
+Emergent patterns include:
+
+- Stable structures  
+- Oscillators  
+- Moving entities  
+- Chaotic systems  
+
+All behaviors emerge purely from rule iteration.
+
+---
+
+## 📊 Metrics System
+
+Tracks:
+
+- Alive cell count  
+- Generation number  
+- Stability trends  
+- Growth / decay patterns  
+
+Used to analyze:
+
+- Order vs chaos  
+- System stability  
+- Long-term evolution  
+
+---
+
+## 🧠 Design Philosophy
+
+### ✔ Modularity
+
+Each system component is independent:
+
+- Engine  
+- Grid  
+- Rules  
+- Interface  
+
+---
+
+### ✔ Extensibility
 
 New rules and patterns can be added without modifying core logic.
 
 ---
 
-✔ Observability
+### ✔ Observability
 
-The system is designed to be observed, analyzed, and experimented with — not just run.
-
----
-
-🔬 Future Roadmap
-
-Phase 1 — Rule Expansion
-- Custom rule definitions
-- Rule switching at runtime
-
-Phase 2 — Analysis Tools
-- Heatmaps
-- Pattern detection
-- Statistical evolution tracking
-
-Phase 3 — Advanced Simulation
-- Multi-rule environments
-- Competing cellular systems
-- Noise injection models
-
-Phase 4 — Visualization Upgrade
-- Web-based renderer (Canvas/WebGL)
-- Recording simulations (GIF/MP4)
-- Interactive dashboards
+The system is designed to be **observed, analyzed, and explored**, not just executed.
 
 ---
 
-🧰 Tech Stack
+## 🔬 Future Roadmap
 
-Current:
+### Phase 1 — Rule Expansion
+- Custom rule definitions  
+- Runtime rule switching  
 
-- Python
-- Tkinter
-- Standard library only
+### Phase 2 — Analysis Tools
+- Heatmaps  
+- Pattern detection  
+- Statistical analysis  
 
-Planned:
+### Phase 3 — Advanced Simulation
+- Multi-rule environments  
+- Competing systems  
+- Noise injection  
 
-- NumPy
-- Matplotlib
-- Web visualization layer
+### Phase 4 — Visualization Upgrade
+- Web-based renderer (Canvas/WebGL)  
+- Simulation recording (GIF/MP4)  
+- Interactive dashboards  
 
 ---
 
-📌 Project Status
+## 🧰 Tech Stack
 
-Prototype / Experimental Research Phase
+### Current
+- Python  
+- Tkinter  
+- Standard Library  
 
-Focus areas:
+### Planned
+- NumPy  
+- Matplotlib  
+- Web visualization layer  
 
-- Simulation architecture
-- Emergence behavior exploration
-- Rule system design
-- Interactive experimentation
+---
+
+## 📌 Project Status
+
+**Prototype / Research Phase**
+
+Focus:
+
+- Simulation architecture  
+- Emergent behavior exploration  
+- Rule system design  
+- Experimental analysis  
 
 Not production software — intentionally a research sandbox.
 
 ---
 
-🧠 What This Project Demonstrates
+## 🧠 What This Project Demonstrates
 
-- Simulation architecture design
-- Clean modular engineering
-- Event-driven GUI systems
-- Discrete dynamical systems
-- Emergent behavior modeling
-- Algorithmic system thinking
+- Simulation architecture design  
+- Modular system engineering  
+- Event-driven GUI design  
+- Emergent systems modeling  
+- Algorithmic reasoning  
+- Discrete dynamical systems  
 
 ---
 
-📸 Screenshots
+## 📸 Screenshots
 
-(Add later)
+(To be added)
 
 Suggested visuals:
 
-- Glider movement
-- Oscillating structures
-- Live grid interaction
+- Glider movement  
+- Oscillators  
+- Live grid interaction  
 
 ---
 
-⭐ Final Note
+## ⭐ Final Note
 
 Emergentis is not just a Game of Life implementation.
 
-It is a **minimal research framework for studying how complexity emerges from simple local rules**.
+It is a **research framework for studying how complexity emerges from simple local rules**.
